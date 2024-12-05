@@ -30,7 +30,7 @@ defmodule Redbird.Redis do
 
   def del(keys) when is_list(keys) do
     pid()
-    |> Redix.noreply_command(["DEL" | keys])
+    |> Redix.command(["DEL" | keys])
   end
 
   def del(key) when is_binary(key) do
